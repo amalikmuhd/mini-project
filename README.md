@@ -1,50 +1,111 @@
-# Welcome to your Expo app 👋
+# Mini Project: Data Fetching Mobile Application
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[Mini Project](./preview.gif)
 
-## Get started
+## API Integration
 
-1. Install dependencies
+- **Rick and Morty API (for character data)**:
+  - **Endpoint**: `/character` - Fetches a list of characters.
+
+## Features
+
+- **Data Listing**:
+
+  - Fetch and display a list of items from the chosen public API.
+
+- **Search Functionality**:
+
+  - Implement a search bar to filter the list based on user input.
+
+- **Detail View**:
+
+  - Allow users to tap on an item in the list to view detailed information about it.
+
+- **UI/UX**:
+
+  - Design a clean, intuitive interface that is responsive across different devices.
+  - Use appropriate visuals and design patterns to enhance user experience.
+
+- **Error Handling**:
+  - Handle API errors gracefully by allowing users to retry fetching data. If data fails to load, users will be presented with a retry option to attempt fetching the data again.
+
+## Setup and Installation
+
+To set up and run the project locally, follow these steps:
+
+1. **Clone the Repository**
 
    ```bash
-   npm install
+   git clone https://github.com/amalikmuhd/mini-project.git
    ```
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+2. **Navigate to Project Directory**
 
 ```bash
-npm run reset-project
+cd mini-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+3. **Install Dependencies**
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. **Start the Expo Development Server**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm start
+```
 
-## Join the community
+5. **Scan barcode to open the app on your mobile phone**
 
-Join our community of developers creating universal apps.
+```bash
+Make sure you have ExpoGo download on your phone
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Folder Structure
+
+Here is an overview of the project's folder structure:
+
+```plaintext
+├── app/                   Screen components for different views
+│   ├── _layout/              Entry point of the application
+│   └── index/                Index screen
+│   └── detail/               Detail screen
+|
+├── assets/                   Static assets like images and icons
+│   ├── images/               Image files used in the app
+│   └── icons/                Icon files used in the app
+|
+├── components/               Reusable React components
+│   ├── Header.tsx            Header component
+│   ├── ItemList.tsx          ItemList component
+│   └── Modal.tsx             Modal component
+|   └── SearchBar.tsx         SearchBar component
+|   └── ViewAnimation.tsx     ViewAnimation component
+|
+├── constants/            Constant values like colors and dimensions
+│   ├── Colors.ts             Color constants
+├── services/                 API service and utility functions
+│   ├── apiClient.ts          API configurations
+│   └── endpoint.ts           Endpoint
+|
+├── utils/                  utils folder
+│   └── index.ts              date format
+|
+├── app.json                Expo configuration file
+├── package.json            Project dependencies and scripts
+├── README.md               This file
+```
+
+## Usage
+
+Once the app is running, you can:
+
+- **View Data**: The home screen will display lists fetched from the Rick and Morty API.
+- **Search**: Use the search bar to filter through the data.
+- **View Details**: Tap on any item to see detailed information.
+
+## Contribution
+
+Feel free to open issues or submit pull requests if you have any improvements or fixes.

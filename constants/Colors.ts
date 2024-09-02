@@ -1,26 +1,44 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
+import { Dimensions } from "react-native";
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+const { width, height } = Dimensions.get("window");
 
-export const Colors = {
+export const colors = {
+  primary: "#070f18",
+  gray: "#8b8989",
+  lightGray: "#b2b2b2",
+  light: "#fbfbfb",
+  white: "#fff",
+  black: "#000",
+};
+
+export const shadow = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    shadowColor: colors.black,
+    shadowRadius: 4,
+    shadowOpacity: 0.1,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    shadowColor: colors.black,
+    shadowRadius: 4,
+    shadowOpacity: 0.3,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
   },
+};
+
+export const sizes = {
+  width,
+  height,
+  title: 32,
+  h2: 24,
+  h3: 18,
+  body: 14,
+  caption: 12,
+  radius: 16,
 };
