@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, FlatList, StyleSheet, Text } from "react-native";
+import SearchBar from "@/components/SearchBar";
 import ItemList from "@/components/ItemList";
 import { router } from "expo-router";
 import { colors } from "@/constants/Colors";
@@ -7,6 +8,7 @@ import Animated, { FadeInDown } from "react-native-reanimated";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { getCharacters } from "@/service/endpoint";
 import { useQuery } from "react-query";
+import CustomModal from "@/components/Modal";
 import { Skeleton } from "moti/skeleton";
 import formatDate from "@/utils/date";
 import { Data } from "@/types";
@@ -19,6 +21,10 @@ const HomeScreen = () => {
     queryFn: () => getCharacters(),
   });
 
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
+
   const filteredData = data?.data?.results?.filter((character: Data) =>
     character.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -26,13 +32,14 @@ const HomeScreen = () => {
   if (error) {
     return (
       <GestureHandlerRootView>
-        <Text>Error</Text>
+        <CustomModal onPress={() => refetch()} />
       </GestureHandlerRootView>
     );
   }
 
   return (
     <View style={styles.container}>
+      <SearchBar searchQuery={searchQuery} setSearchQuery={handleSearch} />
       {isLoading ? (
         <FlatList
           data={[1, 2, 3, 4, 5, 6]}
