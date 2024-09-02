@@ -1,6 +1,10 @@
 # Mini Project: Data Fetching Mobile Application
 
-[Mini Project](./preview.gif)
+<p align="center">
+  <img src="./preview.gif" alt="Mini Project" width="30%" />
+  <img src="./loading.gif" alt="Mini Project" width="30%" />
+  <img src="./error.gif" alt="Mini Project" width="30%" />
+</p>
 
 ## API Integration
 
